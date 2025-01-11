@@ -1,16 +1,28 @@
-import { Home, Profile, SignIn, SignUp } from "@/pages";
+import { Home, Profile, SignIn, SignUp, Gallery, Contact } from "@/pages";
 
 export const routes = [
   {
-    name: "home",
+    name: "घर(home)",
     path: "/home",
     element: <Home />,
   },
+  {
+    name: "गैलरी(gallery)",
+    path: "/gallery",
+    element: <Gallery />,
+  },
+  {
+    name: "हमसे संपर्क करें(contact)",
+    path: "/contact",
+    element: <Contact />,
+  },
+  /*
   {
     name: "profile",
     path: "/profile",
     element: <Profile />,
   },
+  
   {
     name: "Sign In",
     path: "/sign-in",
@@ -27,6 +39,7 @@ export const routes = [
     target: "_blank",
     element: "",
   },
+  */
 ];
 
 export default routes;
