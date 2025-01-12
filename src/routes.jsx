@@ -11,11 +11,13 @@ export const routes = [
     path: "/gallery",
     element: <Gallery />,
   },
+  /*
   {
     name: "हमसे संपर्क करें(contact)",
     path: "/contact",
     element: <Contact />,
   },
+  */
   /*
   {
     name: "profile",

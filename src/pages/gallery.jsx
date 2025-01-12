@@ -1,86 +1,91 @@
-import React from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Typography,
-  Button,
-  IconButton,
-  Input,
-  Textarea,
-  Checkbox,
-} from "@material-tailwind/react";
-import { FingerPrintIcon, UsersIcon } from "@heroicons/react/24/solid";
+import React, { useState } from "react";
+import { Card, CardBody } from "@material-tailwind/react";
 import { PageTitle, Footer } from "@/widgets/layout";
-import { FeatureCard, TeamCard } from "@/widgets/cards";
-import { featuresData, teamData, contactData } from "@/data";
+
+const photos = [
+  "/src/images/image1.png", 
+  "/src/images/image2.png", 
+  "/src/images/image3.png", 
+  "/src/images/image4.png", 
+  "/src/images/image5.png", 
+  "/src/images/image6.png", 
+  "/src/images/image7.png", 
+  "/src/images/image8.png", 
+  "/src/images/image9.png", 
+  "/src/images/image10.png", 
+  "/src/images/image11.png", 
+  "/src/images/image12.png", 
+  "/src/images/image13.png", 
+  "/src/images/image14.png", 
+  "/src/images/image15.png", 
+
+  // Add more photo paths as needed
+];
 
 export function Gallery() {
-  return (
-<>
-      <section className="relative bg-black py-24 px-4">
-              <div className="container mx-auto">
-                <PageTitle section="Co-Working" heading="Build something">
-                  Put the potentially record low maximum sea ice extent tihs year down
-                  to low ice. According to the National Oceanic and Atmospheric
-                  Administration, Ted, Scambos.
-                </PageTitle>
-                <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
-                  {contactData.map(({ title, icon, description }) => (
-                    <Card
-                      key={title}
-                      color="transparent"
-                      shadow={false}
-                      className="text-center text-blue-gray-900"
-                    >
-                      <div className="mx-auto mb-6 grid h-14 w-14 place-items-center rounded-full bg-blue-gray-900 shadow-lg shadow-gray-500/20">
-                        {React.createElement(icon, {
-                          className: "w-5 h-5 text-white",
-                        })}
-                      </div>
-                      <Typography variant="h5" color="blue-gray" className="mb-2">
-                        {title}
-                      </Typography>
-                      <Typography className="font-normal text-blue-gray-500">
-                        {description}
-                      </Typography>
-                    </Card>
-                  ))}
-                </div>
-                <PageTitle section="Contact Us" heading="Want to work with us?">
-                  Complete this form and we will get back to you in 24 hours.
-                </PageTitle>
-                <form className="mx-auto w-full mt-12 lg:w-5/12">
-                  <div className="mb-8 flex gap-8">
-                    <Input variant="outlined" size="lg" label="Full Name" />
-                    <Input variant="outlined" size="lg" label="Email Address" />
-                  </div>
-                  <Textarea variant="outlined" size="lg" label="Message" rows={8} />
-                  <Checkbox
-                    label={
-                      <Typography
-                        variant="small"
-                        color="gray"
-                        className="flex items-center font-normal"
-                      >
-                        I agree the
-                        <a
-                          href="#"
-                          className="font-medium transition-colors hover:text-gray-900"
-                        >
-                          &nbsp;Terms and Conditions
-                        </a>
-                      </Typography>
-                    }
-                    containerProps={{ className: "-ml-2.5" }}
-                  />
-                  <Button variant="gradient" size="lg" className="mt-8" fullWidth>
-                    Send Message
-                  </Button>
-                </form>
-              </div>
-            </section>
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
+  const nextPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) =>
+      prevIndex === photos.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevPhoto = () => {
+    setCurrentPhotoIndex((prevIndex) =>
+      prevIndex === 0 ? photos.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+    <>
+      <PageTitle title="Photo Gallery" />
+      <div className="flex justify-center bg-black items-center  pt-24 pb-32">
+        <Card className="w-full md:w-2/3 lg:w-1/2 overflow-hidden shadow-lg transition-all duration-300">
+          <CardBody className="relative">
+            <div className="w-full h-96 bg-white flex justify-center items-center">
+              <img
+                src={photos[currentPhotoIndex]}
+                alt={`Gallery Photo ${currentPhotoIndex + 1}`}
+                className="object-contain max-h-full max-w-full transition-transform duration-700 ease-in-out"
+              />
+            </div>
+            <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4 transform -translate-y-1/2">
+              <button
+                onClick={prevPhoto}
+                className="bg-black bg-opacity-50 text-white p-2 rounded-full shadow-lg hover:bg-opacity-70 transition-all"
+              >
+                &#8249;
+              </button>
+              <button
+                onClick={nextPhoto}
+                className="bg-black bg-opacity-50 text-white p-2 rounded-full shadow-lg hover:bg-opacity-70 transition-all"
+              >
+                &#8250;
+              </button>
+            </div>
+          </CardBody>
+        </Card>
+      </div>
+
+      {/* Thumbnail Gallery */}
+      <div className="flex justify-center gap-4 mt-6 flex-wrap">
+        {photos.map((photo, index) => (
+          <div
+            key={index}
+            className="relative w-1/4 md:w-1/6 transition-transform transform hover:scale-105"
+          >
+            <img
+              src={photo}
+              alt={`Thumbnail ${index + 1}`}
+              className="w-full h-32 object-cover rounded-lg cursor-pointer transition-transform duration-300"
+              onClick={() => setCurrentPhotoIndex(index)}
+            />
+          </div>
+        ))}
+      </div>
+
+      <Footer />
     </>
   );
 }
