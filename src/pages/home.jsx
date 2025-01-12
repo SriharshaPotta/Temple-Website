@@ -13,7 +13,7 @@ import { FeatureCard } from "@/widgets/cards";
 export function Home() {
   return (
     <>
-      <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
+      <div className="relative flex h-[45vh] content-center items-center justify-center pt-16 pb-28">
         <div className="absolute top-0 h-full w-full bg-[url('/img/background-3.png')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
@@ -30,9 +30,12 @@ export function Home() {
         </div>
       </div>
       
-      <section className="-mt-32 bg-white px-4 pb-20 pt-4">
+      <section className="-mt-32 bg-white px-4 pb-20 pt-32">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
+          <Typography variant="h4" color="blue-gray" className="font-bold mb-8">
+              
+            </Typography>
             <Typography variant="h4" color="blue-gray" className="font-bold mb-4">
               **स्थाई पता:**
             </Typography>
@@ -46,6 +49,10 @@ export function Home() {
               पुष्पा त्रिपाठी, M L C T कॉलेज के पीछे, यूनिवर्सिटी रोड, इटौरा, रीवा, मध्य प्रदेश, पिन कोड, ४८६00३
             </Typography>
           </div>
+
+
+
+
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             <FeatureCard
@@ -64,50 +71,15 @@ export function Home() {
               description="संस्था द्वारा गौशाला का संचालन किया जाता है, जो भारतीय संस्कृति का हिस्सा है।"
             />
           </div>
-
-          <div className="mt-32 flex flex-wrap items-center">
-            <div className="mx-auto -mt-8 w-full px-4 md:w-5/12">
-              <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-gray-900 p-2 text-center shadow-lg">
-                <FingerPrintIcon className="h-8 w-8 text-white " />
-              </div>
-              <Typography variant="h3" className="mb-3 font-bold" color="blue-gray">
-                संस्था का उद्देश्य
-              </Typography>
-              <Typography className="mb-8 font-normal text-blue-gray-500">
-                "जननी जन्मभूमिश्च स्वर्गादपि गरीयसी" की भावना से हम भारतीय संस्कृति के उत्थान और वेद विद्या के प्रचार-प्रसार के लिए निरंतर कार्यरत हैं।
-              </Typography>
-              <Button variant="filled">अधिक जानें</Button>
-            </div>
-            <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
-              <Card className="shadow-lg border shadow-gray-500/10 rounded-lg">
-                <CardHeader floated={false} className="relative h-56">
-                  <img
-                    alt="Card Image"
-                    src="/img/hanuman-temple.jpg"
-                    className="h-full w-full"
-                  />
-                </CardHeader>
-                <CardBody>
-                  <Typography variant="small" color="blue-gray" className="font-normal">गौशाला</Typography>
-                  <Typography variant="h5" color="blue-gray" className="mb-3 mt-2 font-bold">
-                    हमारे गौशाला में भारतीय संस्कृति की प्रमुखता है
-                  </Typography>
-                  <Typography className="font-normal text-blue-gray-500">
-                    हमारे गौशाला में भारतीय परंपरा और संस्कृति के अनुसार गायों की देखभाल की जाती है।
-                  </Typography>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section className="px-4 pt-20 pb-48">
+      <section className="px-4 pt-20 pb-12">
         <div className="container mx-auto">
           <PageTitle section="संस्था का कार्य" heading="संस्था के मुख्य सेवा क्षेत्र">
             हमारी संस्था विभिन्न क्षेत्रों में कार्य करती है:
           </PageTitle>
-          <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-3">
             <Card
               key="वेद/संस्कृत विद्यालय"
               color="transparent"
@@ -149,7 +121,44 @@ export function Home() {
             </Card>
           </div>
         </div>
+
+
+        <div className="mt-32 flex flex-wrap items-center">
+            <div className="mx-auto -mt-8 w-full px-4 md:w-5/12">
+              <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-gray-900 p-2 text-center shadow-2xl">
+                <FingerPrintIcon className="h-8 w-8 text-white " />
+              </div>
+              <Typography variant="h3" className="mb-3 font-bold" color="blue-gray">
+                संस्था का उद्देश्य
+              </Typography>
+              <Typography className="mb-8 font-normal text-blue-gray-500">
+                "जननी जन्मभूमिश्च स्वर्गादपि गरीयसी" की भावना से हम भारतीय संस्कृति के उत्थान और वेद विद्या के प्रचार-प्रसार के लिए निरंतर कार्यरत हैं।
+              </Typography>
+              <Button variant="filled">अधिक जानें</Button>
+            </div>
+            <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
+              <Card className="shadow-2xl border shadow-gray-500/10 rounded-lg">
+                <CardHeader floated={false} className="relative h-56">
+                  <img
+                    alt="Card Image"
+                    src="src\images\image1.png"
+                    className="h-full w-full"
+                  />
+                </CardHeader>
+                <CardBody>
+                  <Typography variant="small" color="blue-gray" className="font-normal">गौशाला</Typography>
+                  <Typography variant="h5" color="blue-gray" className="mb-3 mt-2 font-bold">
+                    हमारे गौशाला में भारतीय संस्कृति की प्रमुखता है
+                  </Typography>
+                  <Typography className="font-normal text-blue-gray-500">
+                    हमारे गौशाला में भारतीय परंपरा और संस्कृति के अनुसार गायों की देखभाल की जाती है।
+                  </Typography>
+                </CardBody>
+              </Card>
+            </div>
+          </div>
       </section>
+
 
       <div className="bg-white">
         <Footer />
