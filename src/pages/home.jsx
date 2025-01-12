@@ -13,7 +13,7 @@ import { FeatureCard } from "@/widgets/cards";
 export function Home() {
   return (
     <>
-      <div className="relative flex h-[45vh] content-center items-center justify-center pt-16 pb-28">
+      <div className="relative flex h-[50vh] content-center items-center justify-center pt-16 pb-26">
         <div className="absolute top-0 h-full w-full bg-[url('/img/background-3.png')] bg-cover bg-center" />
         <div className="absolute top-0 h-full w-full bg-black/60 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
@@ -33,7 +33,7 @@ export function Home() {
       <section className="-mt-32 bg-white px-4 pb-20 pt-32">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
-          <Typography variant="h4" color="blue-gray" className="font-bold mb-8">
+          <Typography variant="h4" color="blue-gray" className="font-bold mb-14">
               
             </Typography>
             <Typography variant="h4" color="blue-gray" className="font-bold mb-4">
